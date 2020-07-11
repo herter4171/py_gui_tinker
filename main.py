@@ -23,7 +23,7 @@ class TestApp(Frame):
         self.main.title('Test')
         f = Frame(self.main)
         f.pack(fill=BOTH,expand=1)
-        table = TableCanvas(f, data=data)
+        table = TableCanvas(f, data=data, read_only=True)
         #table.importCSV('test.csv')
         print (table.model.columnNames)
         #table.model.data[1]['a'] = 'XX'
