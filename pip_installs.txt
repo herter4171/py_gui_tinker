@@ -1,1 +1,2 @@
 wxPython
+mysql-connector-python
