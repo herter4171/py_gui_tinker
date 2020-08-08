@@ -7,7 +7,7 @@ class csv_button(wx.Button):
 
     def __init__(self, parent, prop_chc):
         super().__init__(parent=parent,
-                         pos=wx.Point(5, 160),
+                         pos=wx.Point(180, 120),
                          label='Save CSV')
 
         assert(isinstance(prop_chc, prop_choice))
@@ -18,7 +18,7 @@ class csv_button(wx.Button):
     def on_click(self, event):
         # Warn user if they didn't select a mat prop first
         if not self._prop_chc.grid:
-            msg = "You have to select a material proprty before saving."
+            msg = "You have to select a material property before saving."
             wx.MessageBox(msg, "Help", wx.ICON_WARNING | wx.ICON_INFORMATION)
         else:
             with wx.FileDialog(self, "Save CSV", wildcard="*.csv",

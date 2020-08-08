@@ -1,2 +1,3 @@
 wxPython
 mysql-connector-python
+pint
