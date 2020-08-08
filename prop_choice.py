@@ -5,6 +5,10 @@ from prop_grid import prop_grid
 
 class prop_choice(wx.Choice):
 
+    @property
+    def grid(self):
+        return self._grid
+
     def __init__(self, parent, db_wrap):
         super().__init__(parent=parent,
                          pos=wx.Point(5, 80),
