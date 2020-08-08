@@ -11,7 +11,7 @@ class mat_choice(wx.Choice):
                          pos=wx.Point(5, 30),
                          size=wx.Size(250, 20))
 
-        text = wx.StaticText(parent=parent, pos=wx.Point(5, 10), label="Material:")
+        wx.StaticText(parent=parent, pos=wx.Point(5, 10), label="Material:")
 
         assert (isinstance(db_wrap, db_wrapper))
 

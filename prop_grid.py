@@ -6,7 +6,7 @@ import wx
 
 class prop_grid(wx.grid.Grid):
     def __init__(self, parent):
-        wx.grid.Grid.__init__(self, parent, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0)
+        wx.grid.Grid.__init__(self, parent, wx.ID_ANY, wx.Point(300, 30), wx.Size(600, 600), 0)
         self.Bind(wx.EVT_KEY_DOWN, self.on_key)
         self.Bind(wx.grid.EVT_GRID_LABEL_RIGHT_CLICK, self.on_label_right_click)
         self.Bind(wx.grid.EVT_GRID_CELL_RIGHT_CLICK, self.on_cell_right_click)

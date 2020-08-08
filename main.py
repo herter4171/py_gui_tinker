@@ -10,6 +10,7 @@ db_wrap = db_wrapper()
 #print("\nMATERIAL_NAMES")
 #[print(x) for x in db_wrap.material_names]
 
+test_data = db_wrap.get_table_data_raw('Steel_Thermal_Conductivity')
 app = wx.App()
 window(None, 'kpMats GUI', db_wrap)
 app.MainLoop()

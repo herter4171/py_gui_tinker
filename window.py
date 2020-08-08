@@ -3,6 +3,7 @@ import wx
 from db_wrapper import db_wrapper
 from mat_choice import mat_choice
 from prop_choice import prop_choice
+from prop_grid import prop_grid
 
 class window(wx.Frame):
     def __init__(self, parent, title, db_wrap):
@@ -13,8 +14,10 @@ class window(wx.Frame):
         box = wx.BoxSizer(wx.VERTICAL)
 
         self.m_choice = mat_choice(panel, db_wrap)
-        self.p_choice = prop_choice(panel)
+        self.p_choice = prop_choice(panel, db_wrap)
         self.m_choice.set_prop_choice(self.p_choice)
+
+
 
         #box.Add(self.m_choice, 0, 4)
         #box.Add(self.p_choice, 0, 4)

@@ -21,7 +21,8 @@ class db_wrapper(object):
     @property
     def material_names(self):
         """Returns list of material names from table Materials"""
-        result = self.__get_table_data_raw(db_wrapper.__mat_tab_name)
+        result = self.get_table_data_raw(db_wrapper.__mat_tab_name,
+                                           headings=False)
 
         return [str(x[0]) for x in result]
 
@@ -56,12 +57,20 @@ class db_wrapper(object):
 
         return mat_map
 
-    def __get_table_data_raw(self, tab_name):
-        """Returns full table contents"""
+    #def get_table_data(self, tab_name):
+
+    def get_table_data_raw(self, tab_name, headings=True):
+        """Returns full table contents with optional headings"""
         cursor = self._db.cursor()
         cursor.execute("SELECT * FROM " + tab_name)
 
-        return cursor.fetchall()
+        tab_data = cursor.fetchall()
+
+        if headings:
+            head_names = tuple([x[0] for x in cursor.description])
+            tab_data = [head_names] + tab_data
+
+        return tab_data
 
     def get_mat_prop_table_names(self, mat_name):
         """Returns set of material property table names for given material"""
