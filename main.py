@@ -12,5 +12,5 @@ db_wrap = db_wrapper()
 
 test_data = db_wrap.get_table_data_raw('Steel_Thermal_Conductivity')
 app = wx.App()
-window(None, 'kpMats GUI', db_wrap)
+window(None, 'Material Properties GUI', db_wrap)
 app.MainLoop()
