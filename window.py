@@ -10,17 +10,15 @@ class window(wx.Frame):
         assert(isinstance(db_wrap, db_wrapper))
 
         panel = wx.Panel(self)
-        box = wx.BoxSizer(wx.HORIZONTAL)
+        box = wx.BoxSizer(wx.VERTICAL)
 
         self.m_choice = mat_choice(panel, db_wrap)
         self.p_choice = prop_choice(panel)
         self.m_choice.set_prop_choice(self.p_choice)
 
-        box.Add(self.m_choice, 0, 4)
-        box.Add(self.p_choice, 0, 4)
+        #box.Add(self.m_choice, 0, 4)
+        #box.Add(self.p_choice, 0, 4)
 
-        box.AddStretchSpacer()
-
-        panel.SetSizer(box)
+        #panel.SetSizer(box)
         self.Centre()
         self.Show()
