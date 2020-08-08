@@ -1,5 +1,6 @@
 import wx
 
+from db_wrapper import db_wrapper
 
 class Mywin(wx.Frame):
     def __init__(self, parent, title):
@@ -19,7 +20,12 @@ class Mywin(wx.Frame):
         self.Centre()
         self.Show()
 
+db_wrap = db_wrapper()
+print("TABLE NAMES")
+[print(x) for x in db_wrap.table_names]
 
-app = wx.App()
-Mywin(None, 'ComboBox and Choice demo')
-app.MainLoop()
+print("\nMATERIAL_NAMES")
+[print(x) for x in db_wrap.material_names]
+#app = wx.App()
+#Mywin(None, 'ComboBox and Choice demo')
+#app.MainLoop()
