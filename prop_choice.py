@@ -21,8 +21,13 @@ class prop_choice(wx.Choice):
         self._grid = None
 
     def on_choice(self, event):
-        print("MADE FOLLOWING CHOICE")
+        # Get table data
         tab_name = self.GetString(self.GetSelection())
+        tab_data = self._db.get_table_data_raw(tab_name)
+
+        # Get dimensions
+        num_cols = len(tab_data[0])
+        num_rows = len(tab_data)
 
         # Clear old grid
         if self._grid:
@@ -30,15 +35,16 @@ class prop_choice(wx.Choice):
 
         # Make a new grid
         self._grid = prop_grid(self._parent)
-        self._grid.CreateGrid(7, 7)
+        self._grid.CreateGrid(num_rows, num_cols)
 
         # Populate the grid
-        for count in range(3):
-            for count2 in range(3):
-                self._grid.SetCellValue(count, count2, tab_name)
+        for curr_row in range(num_rows):
+            for curr_col in range(num_cols):
+                cell_val = str(tab_data[curr_row][curr_col])
+                self._grid.SetCellValue(curr_row, curr_col, cell_val)
 
         self._grid.AutoSizeColumns()
+        #self._grid.AlwaysShowScrollbars()
 
         # Set to read-only
         self._grid.lock_cells()
-        
