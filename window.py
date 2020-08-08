@@ -3,7 +3,7 @@ import wx
 from db_wrapper import db_wrapper
 from mat_choice import mat_choice
 from prop_choice import prop_choice
-from prop_grid import prop_grid
+from help_button import help_button
 
 class window(wx.Frame):
     def __init__(self, parent, title, db_wrap):
@@ -17,7 +17,7 @@ class window(wx.Frame):
         self.p_choice = prop_choice(panel, db_wrap)
         self.m_choice.set_prop_choice(self.p_choice)
 
-
+        self._hb = help_button(panel)
 
         #box.Add(self.m_choice, 0, 4)
         #box.Add(self.p_choice, 0, 4)
