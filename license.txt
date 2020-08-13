@@ -1,0 +1,4 @@
+LICENSE
+-------------------------------------------------------------------------------
+Do with the code what you wish.  Just please retain this file, because I'd like
+it to be known that this began as a weekend project by GitHub user herter4171.
