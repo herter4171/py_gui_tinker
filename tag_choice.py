@@ -18,7 +18,7 @@ class tag_choice(wx.ListBox):
                          pos=wx.Point(300, 30),
                          size=wx.Size(250, 250))
 
-        wx.StaticText(parent=parent, pos=wx.Point(300, 10), label="Tag:")
+        wx.StaticText(parent=parent, pos=wx.Point(300, 10), label="2. Tags for chosen repository:")
 
         self.Bind(wx.EVT_LISTBOX, self.on_choice)
 
@@ -26,7 +26,7 @@ class tag_choice(wx.ListBox):
         self._repo_name = None
         self._tag_name = None
 
-        wx.StaticText(parent=parent, pos=wx.Point(5, 290), label="Full Image Spec:")
+        wx.StaticText(parent=parent, pos=wx.Point(5, 290), label="3. Full image spec:")
         self._img_spec_tb = wx.TextCtrl(parent, pos=wx.Point(5, 310), size=wx.Size(545, 25), value="Image spec...", style=wx.TE_READONLY | wx.TE_LEFT)
 
     def set_repo_uri(self, repo_name: str):

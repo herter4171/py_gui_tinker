@@ -11,7 +11,7 @@ class repo_choice(wx.ListBox):
                          pos=wx.Point(5, 30),
                          size=wx.Size(250, 250))
 
-        wx.StaticText(parent=parent, pos=wx.Point(5, 10), label="Repository:")
+        wx.StaticText(parent=parent, pos=wx.Point(5, 10), label="1. Repositories you can access:")
 
 
         self._ecr_fetcher = ecr_fetcher
