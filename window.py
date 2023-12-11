@@ -1,5 +1,6 @@
 from botocore.exceptions import ClientError
 import wx
+import platform
 
 from ecr_fetcher import EcrFetcher
 from repo_choice import repo_choice
@@ -7,8 +8,19 @@ from tag_choice import tag_choice
 from help_button import help_button
 
 class window(wx.Frame):
+
+    @property
+    def _window_size(self):
+        size = (570, 475)
+
+        if platform.system() == 'Darwin':
+            size = (555, 450)
+
+        return size
+
     def __init__(self, parent, title, ecr_fetcher: EcrFetcher):
-        super(window, self).__init__(parent, title=title, size=(555, 450))
+        # windows: (570, 475)
+        super(window, self).__init__(parent, title=title, size=self._window_size)
 
 
         panel = wx.Panel(self)
