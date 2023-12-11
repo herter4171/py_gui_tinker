@@ -1,7 +1,7 @@
 import wx
 import csv
 
-from prop_choice import prop_choice
+from tag_choice import tag_choice
 
 class csv_button(wx.Button):
 
@@ -10,7 +10,7 @@ class csv_button(wx.Button):
                          pos=wx.Point(180, 120),
                          label='Save CSV')
 
-        assert(isinstance(prop_chc, prop_choice))
+        assert(isinstance(prop_chc, tag_choice))
 
         self.Bind(wx.EVT_BUTTON, self.on_click)
         self._prop_chc = prop_chc
